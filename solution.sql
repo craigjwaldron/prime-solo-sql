@@ -32,13 +32,11 @@
         ora	phoenix	88	90	3.33	8
 
 -- (5) Get the username and account balance of the 3 users with the highest balances, sort highest to lowest balance. NOTE: Research LIMIT
-     SELECT * FROM syntax_practice ORDER BY account_balance DESC;
+     SELECT * FROM syntax_practice ORDER BY account_balance DESC LIMIT 3;
 
          travis	miami	1	100	500000.34	6
          cherise	minneapolis	9	9	4000	2
          shawn	chicago	5	10	355.8	1
-
-    --  QUESTION: When I did  SELECT * FROM syntax_practice LIMIT 3; I did not get travis. Why is that?
 
 -- (6) Get the username and account balance of the 3 users with the lowest balances, sort lowest to highest balance.
     SELECT * FROM syntax_practice ORDER BY account_balance ASC;
@@ -68,7 +66,7 @@
         shawn	chicago	5	10	355.8	1
 
 -- (9) The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: Delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
-      DELETE from syntax_practice WHERE city='miami' OR city='phoenix' AND transactions_completed<5;
+      DELETE from syntax_practice WHERE (city='miami' OR city='phoenix') AND transactions_completed<5;
 
         craig	pluto	33	55	5.69	9
         ora	phoenix	88	90	3.33	8
